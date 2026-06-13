@@ -6,6 +6,13 @@
     <title>FIFA Face-Off | BUCC Event</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- Extra inline to kill any weird button outlines -->
+    <style>
+        button, button:focus, button:active, button:focus-visible {
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -108,5 +115,40 @@
 </div>
 
 <script src="script.js"></script>
+
+<!-- Dynamic football elements for the modern stadium background -->
+<script>
+    (function addFootballElements() {
+        // Add floodlights
+        const flood1 = document.createElement('div');
+        flood1.className = 'floodlight';
+        const flood2 = document.createElement('div');
+        flood2.className = 'floodlight-2';
+        document.body.appendChild(flood1);
+        document.body.appendChild(flood2);
+
+        // Add floating footballs (8)
+        for (let i = 0; i < 8; i++) {
+            const ball = document.createElement('div');
+            ball.className = 'football-float';
+            ball.textContent = '⚽';
+            document.body.appendChild(ball);
+        }
+
+        // Add confetti footballs (10)
+        for (let i = 0; i < 10; i++) {
+            const conf = document.createElement('div');
+            conf.className = 'confetti-ball';
+            conf.textContent = '⚽';
+            document.body.appendChild(conf);
+        }
+
+        // Add goalpost left (since CSS can't have two pseudo-elements)
+        const goalLeft = document.createElement('div');
+        goalLeft.className = 'goalpost-left';
+        goalLeft.textContent = '🥅';
+        document.body.appendChild(goalLeft);
+    })();
+</script>
 </body>
 </html>
