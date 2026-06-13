@@ -1,0 +1,3 @@
+Project Title: FIFA Face-Off – Emoji to Icon Football Quiz
+Description:
+FIFA Face-Off is an interactive web game created for the BUCC (BRAC University Computer Club) event. Players are shown a creative emoji clue representing a current football star (e.g., 🐢💨 for Mbappé). They can use up to three hints (league, position, country) before revealing the player’s name. After revealing, they answer 5 increasingly difficult trivia questions about that player’s career (goals, assists, records, etc.). Each correct trivia gives 1 point. The game also features a persistent leaderboard (saved in browser storage) so multiple participants can compete at a club fair. The UI is modern, responsive, and requires no typing – perfect for a fast‑paced event.
