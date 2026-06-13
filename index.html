@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>FIFA Face-Off | BUCC Event</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game-container">
+    <!-- Header with club name and restart button -->
+    <div class="game-header">
+        <div class="club-badge">
+            <i class="fas fa-laptop-code"></i>
+            <span>BUCC</span>
+            <i class="fas fa-futbol"></i>
+        </div>
+        <h1>FIFA Face-Off</h1>
+        <div class="header-buttons">
+            <div class="score-panel">
+                <span><i class="fas fa-star"></i> Your Score: </span>
+                <span id="totalScoreDisplay">0</span>
+            </div>
+            <button id="restartGameBtn" class="restart-btn"><i class="fas fa-power-off"></i> Restart</button>
+        </div>
+    </div>
+
+    <!-- Main Game Area -->
+    <div class="game-card" id="gameCard">
+        <!-- Player name input (first time) -->
+        <div id="playerNameInput" class="name-input-area">
+            <h3>Enter your name:</h3>
+            <input type="text" id="playerNameField" placeholder="Your name" maxlength="20">
+            <button id="startGameBtn" class="btn-primary">Start Game 🎮</button>
+        </div>
+
+        <!-- Game Play Area (hidden initially) -->
+        <div id="gamePlayArea" style="display: none;">
+            <!-- PHASE 1: Emoji clue -->
+            <div id="phaseGuess" class="phase active">
+                <div class="emoji-card">
+                    <div class="emoji-large" id="emojiClue">🐢💨</div>
+                    <p class="hint-subtext">Say the name out loud → then click REVEAL</p>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="revealPlayerBtn" class="btn-reveal"><i class="fas fa-eye"></i> Reveal Player</button>
+                    <button id="getHintBtn" class="btn-hint"><i class="fas fa-lightbulb"></i> Get Hint</button>
+                </div>
+
+                <div class="hints-modern">
+                    <div class="hints-header">
+                        <span><i class="fas fa-info-circle"></i> Hints left: <span id="hintsUsedCounter">0</span>/3</span>
+                    </div>
+                    <div id="hintsDisplay" class="hints-list"></div>
+                    <div id="hintWarning" class="warning-message"></div>
+                </div>
+
+                <!-- Revealed player name (only name) -->
+                <div id="playerReveal" class="reveal-name-only hidden">
+                    <div class="player-name" id="revealedPlayerName"></div>
+                </div>
+
+                <div id="nextStageArea" class="next-stage hidden">
+                    <button id="startTriviaBtn" class="btn-next-stage"><i class="fas fa-arrow-right"></i> Start Trivia →</button>
+                </div>
+            </div>
+
+            <!-- PHASE 2: Trivia -->
+            <div id="phaseTrivia" class="phase hidden">
+                <div class="trivia-header">
+                    <i class="fas fa-brain"></i>
+                    <span>TRIVIA CHALLENGE (5 questions)</span>
+                    <div id="difficultyBadge" class="difficulty-badge">⭐ EASY</div>
+                </div>
+                <div id="triviaQuestionArea">
+                    <div class="trivia-question" id="triviaQuestionText"></div>
+                    <div class="trivia-options" id="triviaOptions"></div>
+                </div>
+                <div id="triviaFeedback" class="trivia-feedback"></div>
+                <div id="triviaProgress" class="trivia-progress"></div>
+            </div>
+
+            <!-- End of round -->
+            <div id="endRoundArea" class="end-round hidden">
+                <div id="endMessage"></div>
+                <button id="nextPersonBtn" class="btn-next">New Player ➕</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaderboard -->
+    <div class="leaderboard">
+        <div class="leaderboard-header">
+            <i class="fas fa-chart-line"></i> Leaderboard
+            <button id="resetLeaderboardBtn" class="reset-leaderboard"><i class="fas fa-trash-alt"></i> Reset Leaderboard</button>
+        </div>
+        <div id="leaderboardList" class="leaderboard-list">
+            <p style="color:gray; text-align:center;">No scores yet</p>
+        </div>
+    </div>
+
+    <div class="game-footer">
+        <i class="fas fa-gamepad"></i> Hints: League → Position → Country &nbsp;|&nbsp; Each correct trivia = +1 point
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
