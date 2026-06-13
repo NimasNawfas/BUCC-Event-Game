@@ -17,7 +17,6 @@ An interactive, fast-paced web game created for the **BUCC (BRAC University Comp
 
 ## ✨ Features
 
-* **No Typing Required:** The modern, responsive UI is entirely button-based—perfect for a fast-paced club fair environment.
 * **Persistent Leaderboard:** Scores are saved directly in local browser storage so multiple fair participants can compete for the top spot throughout the day.
 * **Responsive Design:** Optimized to play perfectly on both mobile phones and desktop screens.
 
